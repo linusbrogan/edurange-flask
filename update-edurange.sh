@@ -5,7 +5,7 @@ red='\033[0;31m'
 green='\033[0;32m'
 blue='\033[0;34m'
 cyan='\033[0;36m'
-EDU_FOLDER='CHANGE-ME'
+EDU_FOLDER='/home/seth/edurange-flask'
 
 echo "TODO: ask for disabling mail notifications (sed on ~tasks.py:389)"
 echo "TODO: read .ENV variables to set up the appropriate environment"

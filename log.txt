@@ -1,0 +1,189 @@
+
+> edurange_refactored@1.0.0 start /home/seth/edurange-flask
+> concurrently -n "WEBPACK,FLASK,CELERY,FLOWER,WEBSSH" -c "bgBlue.bold,bgMagenta.bold,bgGreen.bold,bgRed.bold,bgOrange" "npm run webpack-watch" "npm run flask-server" "celery worker -B -E -f celery.log -l DEBUG -A edurange_refactored.tasks" "flower -A edurange_refactored.tasks --port=5555 --broker=redis://localhost:6379/0" "npm start ../webssh2-0.3.1-pre-release-0.0/" 
+
+[FLOWER] [I 210111 18:33:34 command:138] Visit me at http://localhost:5555
+[FLOWER] [I 210111 18:33:34 command:145] Broker: redis://localhost:6379/0
+[FLOWER] [I 210111 18:33:34 command:146] Registered tasks: 
+[FLOWER]     ['celery.accumulate',
+[FLOWER]      'celery.backend_cleanup',
+[FLOWER]      'celery.chain',
+[FLOWER]      'celery.chord',
+[FLOWER]      'celery.chord_unlock',
+[FLOWER]      'celery.chunks',
+[FLOWER]      'celery.group',
+[FLOWER]      'celery.map',
+[FLOWER]      'celery.starmap',
+[FLOWER]      'edurange_refactored.tasks.CreateScenarioTask',
+[FLOWER]      'edurange_refactored.tasks.destroy',
+[FLOWER]      'edurange_refactored.tasks.scenarioCollectLogs',
+[FLOWER]      'edurange_refactored.tasks.scenarioTimeoutWarningEmail',
+[FLOWER]      'edurange_refactored.tasks.send_async_email',
+[FLOWER]      'edurange_refactored.tasks.start',
+[FLOWER]      'edurange_refactored.tasks.stop',
+[FLOWER]      'edurange_refactored.tasks.test_send_async_email']
+[FLOWER] [I 210111 18:33:34 mixins:229] Connected to redis://localhost:6379/0
+[FLASK] 
+[FLASK] > edurange_refactored@1.0.0 flask-server
+[FLASK] > flask run --host=0.0.0.0
+[FLASK] 
+[WEBSSH] 
+[WEBSSH] > edurange_refactored@1.0.0 start
+[WEBSSH] > concurrently -n "WEBPACK,FLASK,CELERY,FLOWER,WEBSSH" -c "bgBlue.bold,bgMagenta.bold,bgGreen.bold,bgRed.bold,bgOrange" "npm run webpack-watch" "npm run flask-server" "celery worker -B -E -f celery.log -l DEBUG -A edurange_refactored.tasks" "flower -A edurange_refactored.tasks --port=5555 --broker=redis://localhost:6379/0" "npm start ../webssh2-0.3.1-pre-release-0.0/"  "../webssh2-0.3.1-pre-release-0.0/"
+[WEBSSH] 
+[WEBPACK] 
+[WEBPACK] > edurange_refactored@1.0.0 webpack-watch
+[WEBPACK] > NODE_ENV=debug webpack --mode development --watch
+[WEBPACK] 
+[FLASK]  * Serving Flask app "autoapp.py"
+[FLASK]  * Environment: production
+[FLASK]    WARNING: This is a development server. Do not use it in a production deployment.
+[FLASK]    Use a production WSGI server instead.
+[FLASK]  * Debug mode: off
+[WEBSSH] [5] /bin/sh: 1: ../webssh2-0.3.1-pre-release-0.0/: Permission denied
+[WEBSSH] [5] ../webssh2-0.3.1-pre-release-0.0/ exited with code 126
+[FLASK]  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[FLOWER] [W 210111 18:33:38 control:49] 'stats' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'active_queues' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'registered' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'scheduled' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'active' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'reserved' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'revoked' inspect method failed
+[FLOWER] [W 210111 18:33:38 control:49] 'conf' inspect method failed
+[WEBPACK] 
+[WEBPACK] webpack is watching the files...
+[WEBPACK] 
+[WEBSSH] [FLOWER] [I 210111 18:33:38 command:138] Visit me at http://localhost:5555
+[WEBSSH] [FLOWER] [I 210111 18:33:38 command:145] Broker: redis://localhost:6379/0
+[WEBSSH] [FLOWER] [I 210111 18:33:38 command:146] Registered tasks: 
+[WEBSSH] [FLOWER]     ['celery.accumulate',
+[WEBSSH] [FLOWER]      'celery.backend_cleanup',
+[WEBSSH] [FLOWER]      'celery.chain',
+[WEBSSH] [FLOWER]      'celery.chord',
+[WEBSSH] [FLOWER]      'celery.chord_unlock',
+[WEBSSH] [FLOWER]      'celery.chunks',
+[WEBSSH] [FLOWER]      'celery.group',
+[WEBSSH] [FLOWER]      'celery.map',
+[WEBSSH] [FLOWER]      'celery.starmap',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.CreateScenarioTask',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.destroy',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.scenarioCollectLogs',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.scenarioTimeoutWarningEmail',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.send_async_email',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.start',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.stop',
+[WEBSSH] [FLOWER]      'edurange_refactored.tasks.test_send_async_email']
+[WEBSSH] [FLOWER] [I 210111 18:33:38 mixins:229] Connected to redis://localhost:6379/0
+[WEBSSH] [FLOWER] flower   -> flower:0.9.5 tornado:6.1 humanize:3.1.0
+[WEBSSH] [FLOWER] software -> celery:4.4.6 (cliffs) kombu:4.6.11 py:3.8.5
+[WEBSSH] [FLOWER]             billiard:3.6.3.0 redis:3.5.3
+[WEBSSH] [FLOWER] platform -> system:Linux arch:64bit, ELF
+[WEBSSH] [FLOWER]             kernel version:5.4.0-52-generic imp:CPython
+[WEBSSH] [FLOWER] loader   -> celery.loaders.app.AppLoader
+[WEBSSH] [FLOWER] settings -> transport:redis results:redis://localhost:6379/0
+[WEBSSH] [FLOWER] 
+[WEBSSH] [FLOWER] broker_url: 'redis://localhost:6379/0'
+[WEBSSH] [FLOWER] result_backend: 'redis://localhost:6379/0'
+[WEBSSH] [FLOWER] 
+[WEBSSH] [WEBPACK] 
+[WEBSSH] [WEBPACK] > edurange_refactored@1.0.0 webpack-watch
+[WEBSSH] [WEBPACK] > NODE_ENV=debug webpack --mode development --watch
+[WEBSSH] [WEBPACK] 
+[WEBSSH] [FLOWER] Traceback (most recent call last):
+[WEBSSH] [FLOWER]   File "/home/seth/.local/bin/flower", line 8, in <module>
+[WEBSSH] [FLOWER]     sys.exit(main())
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/flower/__main__.py", line 11, in main
+[WEBSSH] [FLOWER]     flower.execute_from_commandline()
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/celery/bin/base.py", line 305, in execute_from_commandline
+[WEBSSH] [FLOWER]     return self.handle_argv(self.prog_name, argv[1:])
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/flower/command.py", line 56, in handle_argv
+[WEBSSH] [FLOWER]     return self.run_from_argv(prog_name, argv)
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/flower/command.py", line 51, in run_from_argv
+[WEBSSH] [FLOWER]     flower.start()
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/flower/app.py", line 60, in start
+[WEBSSH] [FLOWER]     self.listen(self.options.port, address=self.options.address,
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/tornado/web.py", line 2109, in listen
+[WEBSSH] [FLOWER]     server.listen(port, address)
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/tornado/tcpserver.py", line 151, in listen
+[WEBSSH] [FLOWER]     sockets = bind_sockets(port, address=address)
+[WEBSSH] [FLOWER]   File "/home/seth/.local/lib/python3.8/site-packages/tornado/netutil.py", line 161, in bind_sockets
+[WEBSSH] [FLOWER]     sock.bind(sockaddr)
+[WEBSSH] [FLOWER] OSError: [Errno 98] Address already in use
+[WEBSSH] [WEBSSH] 
+[WEBSSH] [WEBSSH] > edurange_refactored@1.0.0 start
+[WEBSSH] [WEBSSH] > concurrently -n "WEBPACK,FLASK,CELERY,FLOWER,WEBSSH" -c "bgBlue.bold,bgMagenta.bold,bgGreen.bold,bgRed.bold,bgOrange" "npm run webpack-watch" "npm run flask-server" "celery worker -B -E -f celery.log -l DEBUG -A edurange_refactored.tasks" "flower -A edurange_refactored.tasks --port=5555 --broker=redis://localhost:6379/0" "npm start ../webssh2-0.3.1-pre-release-0.0/"  "../webssh2-0.3.1-pre-release-0.0/"
+[WEBSSH] [WEBSSH] 
+[WEBSSH] [FLASK] 
+[WEBSSH] [FLASK] > edurange_refactored@1.0.0 flask-server
+[WEBSSH] [FLASK] > flask run --host=0.0.0.0
+[WEBSSH] [FLASK] 
+[WEBSSH] [FLOWER] flower -A edurange_refactored.tasks --port=5555 --broker=redis://localhost:6379/0 exited with code 1
+[WEBSSH] [WEBPACK] npm run webpack-watch exited with code SIGINT
+[WEBSSH] [WEBSSH] npm start ../webssh2-0.3.1-pre-release-0.0/ exited with code SIGINT
+[WEBPACK] npm run webpack-watch exited with code SIGINT
+[WEBSSH] [FLASK] Traceback (most recent call last):
+[WEBSSH] [FLASK]   File "/home/seth/.local/bin/flask", line 5, in <module>
+[WEBSSH] [FLASK]     from flask.cli import main
+[WEBSSH] [FLASK]   File "/home/seth/.local/lib/python3.8/site-packages/flask/__init__.py", line 16, in <module>
+[WEBSSH] [FLASK]     from werkzeug.exceptions import abort
+[WEBSSH] [FLASK]   File "/home/seth/.local/lib/python3.8/site-packages/werkzeug/__init__.py", line 220, in <module>
+[WEBSSH] [FLASK]     from .serving import run_simple
+[WEBSSH] [FLASK]   File "/home/seth/.local/lib/python3.8/site-packages/werkzeug/serving.py", line 56, in <module>
+[WEBSSH] [FLASK]     from http.server import BaseHTTPRequestHandler
+[WEBSSH] [FLASK]   File "/usr/lib/python3.8/http/server.py", line 92, in <module>
+[WEBSSH] [FLASK]     import email.utils
+[WEBSSH] [FLASK]   File "/usr/lib/python3.8/email/utils.py", line 33, in <module>
+[WEBSSH] [FLASK]     from email._parseaddr import quote
+[WEBSSH] [FLASK]   File "/usr/lib/python3.8/email/_parseaddr.py", line 16, in <module>
+[WEBSSH] [FLASK]     import time, calendar
+[WEBSSH] [FLASK]   File "/usr/lib/python3.8/calendar.py", line 50, in <module>
+[WEBSSH] [FLASK]     class _localized_month:
+[WEBSSH] [FLASK] KeyboardInterrupt
+[WEBSSH] [FLASK] npm run flask-server exited with code SIGINT
+[FLOWER] flower -A edurange_refactored.tasks --port=5555 --broker=redis://localhost:6379/0 exited with code SIGINT
+[FLASK] npm run flask-server exited with code SIGINT
+[CELERY]  
+[CELERY]  -------------- celery@pihole v4.4.6 (cliffs)
+[CELERY] --- ***** ----- 
+[CELERY] -- ******* ---- Linux-5.4.0-52-generic-x86_64-with-glibc2.29 2021-01-11 18:33:34
+[CELERY] - *** --- * --- 
+[CELERY] - ** ---------- [config]
+[CELERY] - ** ---------- .> app:         edurange_refactored.tasks:0x7ff6787614f0
+[CELERY] - ** ---------- .> transport:   redis://localhost:6379/0
+[CELERY] - ** ---------- .> results:     redis://localhost:6379/0
+[CELERY] - *** --- * --- .> concurrency: 2 (prefork)
+[CELERY] -- ******* ---- .> task events: ON
+[CELERY] --- ***** ----- 
+[CELERY]  -------------- [queues]
+[CELERY]                 .> celery           exchange=celery(direct) key=celery
+[CELERY]                 
+[CELERY] 
+[CELERY] [tasks]
+[CELERY]   . celery.accumulate
+[CELERY]   . celery.backend_cleanup
+[CELERY]   . celery.chain
+[CELERY]   . celery.chord
+[CELERY]   . celery.chord_unlock
+[CELERY]   . celery.chunks
+[CELERY]   . celery.group
+[CELERY]   . celery.map
+[CELERY]   . celery.starmap
+[CELERY]   . edurange_refactored.tasks.CreateScenarioTask
+[CELERY]   . edurange_refactored.tasks.destroy
+[CELERY]   . edurange_refactored.tasks.scenarioCollectLogs
+[CELERY]   . edurange_refactored.tasks.scenarioTimeoutWarningEmail
+[CELERY]   . edurange_refactored.tasks.send_async_email
+[CELERY]   . edurange_refactored.tasks.start
+[CELERY]   . edurange_refactored.tasks.stop
+[CELERY]   . edurange_refactored.tasks.test_send_async_email
+[CELERY] 
+[CELERY] 
+[CELERY] worker: Hitting Ctrl+C again will terminate all running tasks!
+[CELERY] 
+[CELERY] worker: Warm shutdown (MainProcess)
+[CELERY] 
+[CELERY] worker: Cold shutdown (MainProcess)
+[CELERY] celery worker -B -E -f celery.log -l DEBUG -A edurange_refactored.tasks exited with code SIGINT
+[WEBSSH] [CELERY] celery worker -B -E -f celery.log -l DEBUG -A edurange_refactored.tasks exited with code SIGINT
+[WEBSSH] npm start ../webssh2-0.3.1-pre-release-0.0/ exited with code SIGINT
